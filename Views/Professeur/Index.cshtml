@@ -1,0 +1,97 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card">
+    <div class="card-header">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#professeurModal" onclick="clearTextBoxProfesseur();"><span class="fas fa-plus-circle"></span>Nouveau</button><br /><br />
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>N°</th>
+                    <th>Prénom</th>
+                    <th>Nom</th>
+                    <th>Email</th>
+                    <th>Téléphone</th>
+                    <th>Adresse</th>
+                    <th>CNI</th>
+                    <th>PrixH</th>
+                    <th>Option</th>
+                </tr>
+            </thead>
+            <tbody class="tbodyProfesseurs"></tbody>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>
+<!-- /.card -->
+<div class="modal fade" id="professeurModal" tabindex="-1" role="dialog" arialabelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Nouvelle professeur</h4>
+                <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <input type="hidden" class="form-control" id="Id"
+                               placeholder="Id" disabled="disabled" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Prenom">Prénom</label>
+                        <input type="text" class="form-control" id="Prenom"
+                               placeholder="Prenom" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Nom">Nom</label>
+                        <input type="text" class="form-control" id="Nom"
+                               placeholder="Nom" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Email">Email</label>
+                        <input type="text" class="form-control" id="Email"
+                               placeholder="Email" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Telephone">Téléphone</label>
+                        <input type="text" class="form-control" id="Telephone"
+                               placeholder="Téléphone" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Cni">CNI</label>
+                        <input type="text" class="form-control" id="Cni"
+                               placeholder="CNI" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Adresse">Adresse</label>
+                        <input type="text" class="form-control" id="Adresse"
+                               placeholder="Adresse" />
+                    </div>
+                    <div class="form-group">
+                        <label for="PrixHeure">PrixHeure</label>
+                        <input type="text" class="form-control" id="PrixHeure"
+                               placeholder="Prix de l'heure" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnAdd"
+                        onclick="return AddProfesseur();">
+                    Add
+                </button>
+                <button type="button" class="btn btn-warning" id="btnUpdate"
+                        style="display:none;" onclick="UpdateProfesseur();">
+                    Update
+                </button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>

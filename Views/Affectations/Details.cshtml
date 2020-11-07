@@ -1,0 +1,66 @@
+﻿@model WebApplication1.Models.Affectation
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Affectation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Classe.Libelle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Classe.Libelle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Matiere.Libelle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Matiere.Libelle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Professeur.Prenom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Professeur.Prenom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateAffectation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateAffectation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DureeCours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DureeCours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuantumHoraire)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuantumHoraire)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,72 @@
+﻿@model WebApplication1.Models.Affectation
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Affectation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Classe.Libelle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Classe.Libelle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Matiere.Libelle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Matiere.Libelle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Professeur.Prenom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Professeur.Prenom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateAffectation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateAffectation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DureeCours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DureeCours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuantumHoraire)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuantumHoraire)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

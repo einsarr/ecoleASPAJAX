@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#paramAnneeModal" onclick="clearTextBoxAnnee();"><span class="fas fa-plus-circle"></span>Nouveau</button><br /><br />
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>N°</th>
+                    <th>Code année</th>
+                    <th>Libellé année</th>
+                    <th>Etat</th>
+                    <th>Option</th>
+                </tr>
+            </thead>
+            <tbody class="tbodyParamAnnees"></tbody>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>
+<!-- /.card -->
+<div class="modal fade" id="paramAnneeModal" tabindex="-1" role="dialog" arialabelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Nouvelle classe</h4>
+                <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+
+                        <input type="hidden" class="form-control" id="Id"
+                               placeholder="Id" />
+                    </div>
+                    <div class="form-group">
+                        <label for="CodeAnnee">Code Annee</label>
+                        <input type="text" class="form-control" id="CodeAnnee"
+                               placeholder="CodeAnnee" />
+                    </div>
+                    <div class="form-group">
+                        <label for="LibelleAnnee">Libelle Annee</label>
+                        <input type="text" class="form-control" id="LibelleAnnee"
+                               placeholder="LibelleAnnee" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Etat">Etat</label>
+                        <input type="text" class="form-control" id="Etat"
+                               placeholder="Etat" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnAdd"
+                        onclick="return AddParamAnnee();">
+                    Add
+                </button>
+                <button type="button" class="btn btn-warning" id="btnUpdate"
+                        style="display:none;" onclick="UpdateParamAnnee();">
+                    Update
+                </button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>

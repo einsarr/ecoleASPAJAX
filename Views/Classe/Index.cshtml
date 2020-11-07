@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#classeModal" onclick="clearTextBoxClasse();"><span class="fas fa-plus-circle"></span>Nouveau</button><br /><br />
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>N°</th>
+                    <th>Libellé</th>
+                    <th>Max</th>
+                    <th>Actif</th>
+                    <th>Option</th>
+                </tr>
+            </thead>
+            <tbody class="tbodyClasses"></tbody>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>
+<!-- /.card -->
+<div class="modal fade" id="classeModal" tabindex="-1" role="dialog" arialabelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Nouvelle classe</h4>
+                <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                       
+                        <input type="hidden" class="form-control" id="Id"
+                               placeholder="Id" disabled="disabled" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Libelle">Libelle</label>
+                        <input type="text" class="form-control" id="Libelle"
+                               placeholder="Libelle" />
+                    </div>
+                    <div class="form-group">
+                        <label for="NombreMax">Nombre maximale</label>
+                        <input type="text" class="form-control" id="NombreMax"
+                               placeholder="Nombre maximale" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Actif">Actif</label>
+                        <input type="text" class="form-control" id="Etat"
+                               placeholder="Actif" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnAdd"
+                        onclick="return AddClasse();">
+                    Add
+                </button>
+                <button type="button" class="btn btn-warning" id="btnUpdate"
+                        style="display:none;" onclick="UpdateClasse();">
+                    Update
+                </button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>

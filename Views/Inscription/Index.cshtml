@@ -1,0 +1,84 @@
+﻿@model WebApplication1.Models.Inscription
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="card">
+    <div class="card-header">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#inscriptionModal" onclick="clearTextBoxInscription();"><span class="fas fa-plus-circle"></span>Nouveau</button><br /><br />
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>N°</th>
+                    <th>Date inscription</th>
+                    <th>Libelle</th>
+                    <th>Classe</th>
+                    <th>Etudiant</th>
+                    <th>Montant</th>
+                    <th>Option</th>
+                </tr>
+            </thead>
+            <tbody class="tbodyInscriptions"></tbody>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>
+<!-- /.card -->
+<div class="modal fade" id="inscriptionModal" tabindex="-1" role="dialog" arialabelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Nouvelle inscription</h4>
+                <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <input type="hidden" class="form-control" id="Id"
+                               placeholder="Id" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Libelle">Libelle</label>
+                        <input type="text" class="form-control" id="Libelle"
+                               placeholder="Libelle" />
+                    </div>
+                    <div class="form-group">
+                        <label for="EtudiantId">Etudiant</label>
+                        @Html.DropDownList("EtudiantId", null, "---Selectionnez l'étudiant---", htmlAttributes: new { @class = "form-control" })
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ClasseId">Classe</label>
+                        @Html.DropDownList("ClasseId", null, "---Selectionnez la classe---", htmlAttributes: new { @class = "form-control" })
+                    </div>
+
+                    <div class="form-group">
+                        <label for="DateInscription">Date inscription</label>
+                        <input type="date" class="form-control" id="DateInscription"
+                               placeholder="DateInscription" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Montant">Montant</label>
+                        <input type="text" class="form-control" id="Montant"
+                               placeholder="Montant" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnAdd"
+                        onclick="return AddInscription();">
+                    Add
+                </button>
+                <button type="button" class="btn btn-warning" id="btnUpdate"
+                        style="display:none;" onclick="UpdateInscription();">
+                    Update
+                </button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>

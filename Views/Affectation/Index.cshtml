@@ -1,0 +1,88 @@
+﻿@model WebApplication1.Models.Affectation
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="card">
+    <div class="card-header">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#affectationModal" onclick="clearTextBoxAffectation();"><span class="fas fa-plus-circle"></span>Nouveau</button><br /><br />
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>N°</th>
+                    <th>Date Affectation</th>
+                    <th>Durée</th>
+                    <th>Classe</th>
+                    <th>Professeur</th>
+                    <th>Matiere</th>
+                    <th>Quantum Horaire</th>
+                    <th>Option</th>
+                </tr>
+            </thead>
+            <tbody class="tbodyAffectations"></tbody>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>
+<!-- /.card -->
+<div class="modal fade" id="affectationModal" tabindex="-1" role="dialog" arialabelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Nouvelle affectation</h4>
+                <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <input type="hidden" class="form-control" id="Id"
+                               placeholder="Id"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="DateAffectation">Date Affectation</label>
+                        <input type="date" class="form-control" id="DateAffectation"
+                               placeholder="Date Affectation" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="DureeCours">Durée cours</label>
+                        <input type="text" class="form-control" id="DureeCours"
+                               placeholder="DureeCours" />
+                    </div>
+                    <div class="form-group">
+                        <label for="ClasseId">Classe</label>
+                        @Html.DropDownList("ClasseId", null, "---Selectionnez la classe---", htmlAttributes: new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label for="ProfesseurId">Professeur</label>
+                        @Html.DropDownList("ProfesseurId", null, "---Selectionnez la professeur---", htmlAttributes: new { @class = "form-control" })
+
+                    </div>
+                    <div class="form-group">
+                        <label for="MatiereId">Matiere</label>
+                        @Html.DropDownList("MatiereId", null, "---Selectionnez la matière---", htmlAttributes: new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label for="QuantumHoraire">QuantumHoraire</label>
+                        <input type="text" class="form-control" id="QuantumHoraire"
+                               placeholder="QuantumHoraire" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnAdd"
+                        onclick="return AddAffectation();">
+                    Add
+                </button>
+                <button type="button" class="btn btn-warning" id="btnUpdate"
+                        style="display:none;" onclick="UpdateAffectation();">
+                    Update
+                </button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
