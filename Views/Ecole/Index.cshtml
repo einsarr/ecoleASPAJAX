@@ -1,0 +1,109 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ecoleModal" onclick="clearTextBoxEcole();"><span class="fas fa-plus-circle"></span>Nouveau</button><br /><br />
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>N°</th>
+                    <th>Nom</th>
+                    <th>Description</th>
+                    <th>Adresse</th>
+                    <th>Téléphone</th>
+                    <th>Etat</th>
+                    <th>Option</th>
+                </tr>
+            </thead>
+            <tbody class="tbodyEcoles"></tbody>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>
+<!-- /.card -->
+<div class="modal fade" id="ecoleModal" tabindex="-1" role="dialog" arialabelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Nouvelle école</h4>
+                <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+
+                        <input type="hidden" class="form-control" id="Id"
+                               placeholder="Id" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Nom">Nom</label>
+                        <input type="text" class="form-control" id="Nom"
+                               placeholder="Nom" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Description">Description</label>
+                        <textarea name="Description" id="Description" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="Adresse">Adresse</label>
+                        <input type="text" class="form-control" id="Adresse"
+                               placeholder="Adresse" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Email">Email</label>
+                        <input type="text" class="form-control" id="Email"
+                               placeholder="Email" />
+                    </div>
+                    <div class="form-group">
+                        <label for="TelephoneFix">Téléphone Fix</label>
+                        <input type="text" class="form-control" id="TelephoneFix"
+                               placeholder="TelephoneFix" />
+                    </div>
+                    <div class="form-group">
+                        <label for="TelephoneP">Téléphone portable</label>
+                        <input type="text" class="form-control" id="TelephoneP"
+                               placeholder="TelephoneP" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Fax">Fax</label>
+                        <input type="text" class="form-control" id="Fax"
+                               placeholder="Fax" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Ninea">Ninéa</label>
+                        <input type="text" class="form-control" id="Ninea"
+                               placeholder="Ninea" />
+                    </div>
+                    <div class="form-group">
+                        <label for="DateCreation">Date de création</label>
+                        <input type="date" class="form-control" id="DateCreation"
+                               placeholder="DateCreation" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Etat">Etat</label>
+                        <input type="text" class="form-control" id="Etat"
+                               placeholder="Etat" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnAdd"
+                        onclick="return AddEcole();">
+                    Add
+                </button>
+                <button type="button" class="btn btn-warning" id="btnUpdate"
+                        style="display:none;" onclick="UpdateEcole();">
+                    Update
+                </button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>

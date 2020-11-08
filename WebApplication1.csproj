@@ -172,6 +172,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AffectationController.cs" />
     <Compile Include="Controllers\AffectationsController.cs" />
+    <Compile Include="Controllers\EcoleController.cs" />
     <Compile Include="Controllers\ParamAnneeController.cs" />
     <Compile Include="Controllers\InscriptionController.cs" />
     <Compile Include="Controllers\MatiereController.cs" />
@@ -190,6 +191,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Affectation.cs" />
+    <Compile Include="Models\Ecole.cs" />
     <Compile Include="Models\ParamAnnee.cs" />
     <Compile Include="Models\Classe.cs" />
     <Compile Include="Models\DBEcoleContext.cs" />
@@ -213,6 +215,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\ecoles.js" />
     <Content Include="Scripts\paramAnnees.js" />
     <Content Include="Scripts\inscriptions.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -2208,6 +2211,7 @@
     <Content Include="Views\Affectations\Edit.cshtml" />
     <Content Include="Views\Affectations\Index.cshtml" />
     <Content Include="Views\ParamAnnee\Index.cshtml" />
+    <Content Include="Views\Ecole\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

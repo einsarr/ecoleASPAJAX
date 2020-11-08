@@ -13,7 +13,7 @@ namespace WebApplication1.Models
         [Display(Name = "Libellé de la classe"), MaxLength(35, ErrorMessage = "La taille maximale est de 20 caractères"), Required(ErrorMessage = "*")]
         public string Libelle { get; set; }
         [Display(Name ="Le nombre maximum d'étudiants"),Required(ErrorMessage ="*")]
-        [Range(15, 30)]
+        [Range(15, 50)]
         public int NombreMax { get; set; }
         [Display(Name = "Activé"), Required(ErrorMessage = "*")]
         public int Etat { get; set; }

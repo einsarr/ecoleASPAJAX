@@ -18,6 +18,7 @@ namespace WebApplication1.Models
         public DbSet<Inscription> inscriptions { get; set; }
         public DbSet<Affectation> affectations { get; set; }
         public DbSet<ParamAnnee> paramAnnees { get; set; }
+        public DbSet<Ecole> ecoles { get; set; }
         public DbSet<Utilisateur> utilisateurs { get; set; }
         public DbSet<Role> roles { get; set; }
     }
