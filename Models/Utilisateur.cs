@@ -10,20 +10,21 @@ namespace WebApplication1.Models
     public class Utilisateur
     {
         [Key]
-        public int Id { get; set; }
+        public int IdU { get; set; }
         [Display(Name = "Prénom"), MaxLength(35, ErrorMessage = "La taille maximale est de 35 caractères"), Required(ErrorMessage = "*")]
         public string Prenom { get; set; }
         [Display(Name = "Nom"), MaxLength(35, ErrorMessage = "La taille maximale est de 35 caractères"), Required(ErrorMessage = "*")]
         public string Nom { get; set; }
-        [Display(Name = "Username"), MaxLength(20, ErrorMessage = "La taille maximale est de 20 caractères"), Required(ErrorMessage = "*")]
-        public string Username { get; set; }
-        [Display(Name = "Mot de passe"), Required(ErrorMessage = "*")]
-        public string Password { get; set; }
-        [Display(Name = "Email"), Required(ErrorMessage = "*")]
-        [DataType(DataType.EmailAddress)]
-        public string Email { get; set; }
-        [Display(Name = "Activé"), Required(ErrorMessage = "*")]
+        [Display(Name = "Identifiant"), MaxLength(35, ErrorMessage = "La taille maximale est de 35 caractères"), Required(ErrorMessage = "*")]
+        public string Identifiant { get; set; }
+        [Display(Name = "Email"), MaxLength(30, ErrorMessage = "La taille maximale est de 30 caractères"), Required(ErrorMessage = "*")]
+        public string EmailU { get; set; }
+        [Display(Name = "Téléphone"), MaxLength(20, ErrorMessage = "La taille maximale est de 20 caractères"), Required(ErrorMessage = "*")]
+        public string TelephoneU { get; set; }
+        [Display(Name = "User"), MaxLength(80, ErrorMessage = "La taille maximale est de 30")]
+        public string IdUser { get; set; }
+        [Display(Name = "Etat"), Required(ErrorMessage = "*")]
         public int Etat { get; set; }
-        public virtual List<Role> Roles { get; set; }
+        
     }
 }

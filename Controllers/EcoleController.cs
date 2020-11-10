@@ -7,6 +7,7 @@ using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
+    [Authorize]
     public class EcoleController : Controller
     {
         private DBEcoleContext db = new DBEcoleContext();

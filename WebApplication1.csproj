@@ -185,6 +185,7 @@
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\UtilisateurController.cs" />
+    <Compile Include="Controllers\UtilisateursController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -215,6 +216,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\roles.js" />
+    <Content Include="Scripts\users.js" />
     <Content Include="Scripts\ecoles.js" />
     <Content Include="Scripts\paramAnnees.js" />
     <Content Include="Scripts\inscriptions.js" />
@@ -370,6 +373,7 @@
     <Content Include="templ\docs\_layouts\home.html" />
     <Content Include="templ\docs\_layouts\page.html" />
     <Content Include="templ\docs\_layouts\post.html" />
+    <Content Include="templ\images\tenor.gif" />
     <Content Include="templ\pages\calendar.html" />
     <Content Include="templ\pages\charts\chartjs.html" />
     <Content Include="templ\pages\charts\flot.html" />
@@ -2212,6 +2216,11 @@
     <Content Include="Views\Affectations\Index.cshtml" />
     <Content Include="Views\ParamAnnee\Index.cshtml" />
     <Content Include="Views\Ecole\Index.cshtml" />
+    <Content Include="Views\Utilisateurs\Create.cshtml" />
+    <Content Include="Views\Utilisateurs\Delete.cshtml" />
+    <Content Include="Views\Utilisateurs\Details.cshtml" />
+    <Content Include="Views\Utilisateurs\Edit.cshtml" />
+    <Content Include="Views\Utilisateurs\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

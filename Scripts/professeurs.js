@@ -55,7 +55,8 @@ function AddProfesseur() {
         contentType: "application/json;charset=utf-8",
         dataType: "json",
         success: function (result) {
-            loadProfesseurs();
+            //loadProfesseurs();
+            //tableData.ajax.reload();
             $('#professeurModal').modal('hide');
         },
         error: function (errormessage) {
@@ -232,7 +233,8 @@ function DeleleProfesseur(ID) {
                 contentType: "application/json;charset=UTF-8",
                 dataType: "json",
                 success: function (result) {
-                    loadProfesseurs();
+                    tableData.ajax.reload(null, false);
+                    //loadProfesseurs();
                 },
                 error: function (errormessage) {
                     alert(errormessage.responseText);

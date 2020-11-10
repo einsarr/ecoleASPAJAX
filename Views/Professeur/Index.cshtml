@@ -4,33 +4,37 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-<div class="card">
-    <div class="card-header">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#professeurModal" onclick="clearTextBoxProfesseur();"><span class="fas fa-plus-circle"></span>Nouveau</button><br /><br />
-    </div>
-    <!-- /.card-header -->
-    <div class="card-body">
-        <table id="example1" class="table table-bordered table-striped">
-            <thead>
-                <tr>
-                    <th>N°</th>
-                    <th>Prénom</th>
-                    <th>Nom</th>
-                    <th>Email</th>
-                    <th>Téléphone</th>
-                    <th>Adresse</th>
-                    <th>CNI</th>
-                    <th>PrixH</th>
-                    <th>Option</th>
-                </tr>
-            </thead>
-            <tbody class="tbodyProfesseurs"></tbody>
-        </table>
-    </div>
-    <!-- /.card-body -->
+<div class="card-header">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#professeurModal" onclick="clearTextBoxProfesseur();"><span class="fas fa-plus-circle"></span>Nouveau</button><br /><br />
 </div>
-<!-- /.card -->
+
+<table id="professeurTable" class="ui celled table" style="width:100%">
+    <thead>
+        <tr>
+            <th>Prenom</th>
+            <th>Nom</th>
+            <th>Email</th>
+            <th>Telephone</th>
+            <th>Adresse</th>
+            <th>Cni</th>
+            <th>PrixHeure</th>
+            <th>Option</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th>Prenom</th>
+            <th>Nom</th>
+            <th>Email</th>
+            <th>Telephone</th>
+            <th>Adresse</th>
+            <th>Cni</th>
+            <th>PrixHeure</th>
+            <th>Option</th>
+        </tr>
+    </tfoot>
+</table>
+
 <div class="modal fade" id="professeurModal" tabindex="-1" role="dialog" arialabelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">

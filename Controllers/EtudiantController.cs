@@ -11,6 +11,7 @@ namespace WebApplication1.Controllers
     {
         private DBEcoleContext db = new DBEcoleContext();
         // GET: Classe
+
         public ActionResult Index()
         {
             return View();

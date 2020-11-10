@@ -28,6 +28,12 @@
     <link rel="stylesheet" href="~/templ/plugins/summernote/summernote-bs4.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.10.22/css/dataTables.semanticui.min.css" rel="stylesheet" />
+
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
@@ -378,6 +384,14 @@
     <!-- AdminLTE for demo purposes -->
     <script src="~/templ/dist/js/demo.js"></script>
 
+
+
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/dataTables.semanticui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js"></script>
+
+
+
     <script src="~/Scripts/classes.js"></script>
     <script src="~/Scripts/etudiants.js"></script>
     <script src="~/Scripts/matieres.js"></script>
@@ -386,6 +400,8 @@
     <script src="~/Scripts/inscriptions.js"></script>
     <script src="~/Scripts/paramAnnees.js"></script>
     <script src="~/Scripts/ecoles.js"></script>
+    <script src="~/Scripts/users.js"></script>
+    <script src="~/Scripts/roles.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script>
@@ -399,6 +415,81 @@
                 "info": true,
                 "autoWidth": false,
             });
+
+
+
+
+            var tableData = $("#professeurTable").DataTable({
+                "ajax": {
+                    "url": "/Professeur/GetList",
+                    "type": "POST",
+                    "datatype": "json",
+
+                },
+                //Mettre la langue en français
+                language: {
+                    url: "https://cdn.datatables.net/plug-ins/1.10.19/i18n/French.json",
+                },
+                "language": {
+                    "sEmptyTable": "Aucune donnée disponible dans le tableau",
+                    "sInfo": "Page _START_ à _END_ sur _TOTAL_",
+                    "sInfoEmpty": "Affichage de l'élément 0 à 0 sur 0 élément",
+                    "sInfoFiltered": "(filtré à partir de _MAX_ éléments au total)",
+                    "sInfoPostFix": "",
+                    "sInfoThousands": ",",
+                    "sLengthMenu": "Afficher _MENU_ éléments",
+                    "sLoadingRecords": "Chargement...",
+                    "sProcessing": "Traitement...",
+                    "sSearch": "Rechercher :",
+                    "sZeroRecords": "Aucun élément correspondant trouvé",
+                    "oPaginate": {
+                        "sFirst": "Premier",
+                        "sLast": "Dernier",
+                        "sNext": "Suivant",
+                        "sPrevious": "Précédent"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": activer pour trier la colonne par ordre croissant",
+                        "sSortDescending": ": activer pour trier la colonne par ordre décroissant"
+                    },
+                    "select": {
+                        "rows": {
+                            "_": "%d lignes sélectionnées",
+                            "0": "Aucune ligne sélectionnée",
+                            "1": "1 ligne sélectionnée"
+                        }
+                    }
+                },
+                //>
+                "columns": [
+                    { "data": "Prenom", "name": "Prenom" },
+                    { "data": "Nom", "name": "Nom" },
+                    { "data": "Email", "name": "Email" },
+                    { "data": "Telephone", "name": "Telephone" },
+                    { "data": "Adresse", "name": "Adresse" },
+                    { "data": "Cni", "name": "Cni" },
+                    { "data": "PrixHeure", "name": "PrixHeure" },
+                    {
+                        "data": "Id", "name":"Id"
+                    },
+                ],
+                columnDefs: [
+                    {
+                        "targets": 7,
+                        "orderable": false,
+                        "render": function (data, type, row) {
+                            return '<td><a href="#" onclick="getProfesseurByID(' + data + ')" class="btn btn-warning btn-xs"><span class="fas fa-edit"></span></a> <a href="#" class="btn btn-danger btn-xs" onclick="DeleleProfesseur(' + data +')"><span class="fas fa-trash"></span></a></td>';
+                    }
+                }],
+               
+                //"serverSide": "true",
+                "order": [0, "asc"]
+            });
+
+
+
+
+
         });
     </script>
 </body>

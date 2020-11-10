@@ -1,7 +1,67 @@
 ﻿
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
-
+<div class="card">
+    <div class="card-header">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#roleModal" onclick="clearTextBoxRole();"><span class="fas fa-plus-circle"></span>Nouveau</button><br /><br />
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>N°</th>
+                    <th>Libellé</th>
+                    <th>Etat</th>
+                    <th>Option</th>
+                </tr>
+            </thead>
+            <tbody class="tbodyRoles"></tbody>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>
+<!-- /.card -->
+<div class="modal fade" id="roleModal" tabindex="-1" role="dialog" arialabelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Nouveau role</h4>
+                <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="IdR"
+                               placeholder="Id" disabled="disabled" />
+                    </div>
+                    <div class="form-group">
+                        <label for="LibelleRole">Libelle</label>
+                        <input type="text" class="form-control" id="LibelleRole"
+                               placeholder="Libelle role" />
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="Etat">Etat</label>
+                        <input type="text" class="form-control" id="Etat"
+                               placeholder="Etat" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnAdd"
+                        onclick="return AddRole();">
+                    Add
+                </button>
+                <button type="button" class="btn btn-warning" id="btnUpdate"
+                        style="display:none;" onclick="UpdateRole();">
+                    Update
+                </button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -15,6 +15,13 @@ namespace WebApplication1.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult GetList()
+        {
+            List<Professeur> professeurs = new List<Professeur>();
+            professeurs = db.professeurs.ToList();
+            return Json(new { data = professeurs }, JsonRequestBehavior.AllowGet);
+        }
 
         public JsonResult List()
         {

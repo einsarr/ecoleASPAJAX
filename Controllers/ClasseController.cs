@@ -7,14 +7,18 @@ using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
+    [Authorize]
     public class ClasseController : Controller
     {
+
         private DBEcoleContext db = new DBEcoleContext();
         // GET: Classe
         public ActionResult Index()
         {
             return View();
         }
+
+        
 
         public JsonResult List()
         {
